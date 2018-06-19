@@ -48,7 +48,9 @@ function mostraMensagem() {
 //     console.log("Olha só posso chamar uma função anônima!");
 // });
 
-
-
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+botaoAdicionar.addEventListener("click", function() {
+    console.log(botaoAdicionar);
+});
 
  
