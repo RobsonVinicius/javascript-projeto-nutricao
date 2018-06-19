@@ -49,8 +49,9 @@ function mostraMensagem() {
 // });
 
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
-botaoAdicionar.addEventListener("click", function() {
-    console.log(botaoAdicionar);
+botaoAdicionar.addEventListener("click", function(event) {
+    event.preventDefault();
+    console.log("Vai tomar um copo da água");
 });
 
  
