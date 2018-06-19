@@ -31,6 +31,22 @@ for(var i = 0; i < pacientes.length; i++) {
   }
 }
 
+// var cor = document.querySelector(".info-nome");
+// cor.style.color = "rgb(105,150,255)";
+// cor.style.fontSize = "30px";
+// cor.style.fontStyle = "italic";
+// cor.style.fontWeight = "800"
+
+// Função Nomeada
+mudarTexto.addEventListener("click", mostraMensagem);
+function mostraMensagem() {
+    console.log("Olá eu fui clicado!!!"); 
+ }
+
+// função anônima
+// mudarTexto.addEventListener("click", function(){
+//     console.log("Olha só posso chamar uma função anônima!");
+// });
 
 
 
