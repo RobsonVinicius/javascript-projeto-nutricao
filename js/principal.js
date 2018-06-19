@@ -31,10 +31,8 @@ for(var i = 0; i < pacientes.length; i++) {
   }
 }
 
-// var cor = document.querySelector(".info-nome");
-// cor.style.color = "rgb(105,150,255)";
-// cor.style.fontSize = "30px";
-// cor.style.fontStyle = "italic";
-// cor.style.fontWeight = "800"
-// var tdGordura = pacientes.querySelector(".info-gordura");
-// var gordura = tdGordura.textContent;
+
+
+
+
+ 
