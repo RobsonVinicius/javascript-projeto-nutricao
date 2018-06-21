@@ -12,13 +12,15 @@ header{
 	height: 3em;
 	color: #FFF;
 	margin-bottom: 1em;
+	text-align: center;
 }
 
 header h1{
 	font-size: 2em;
-	display:inline-block;
-	vertical-align:	middle;
+	display: inline-block;
+	vertical-align:	middle; 
 }
+
 header h2{
 	font-size: 2em;
 	display:inline-block;
