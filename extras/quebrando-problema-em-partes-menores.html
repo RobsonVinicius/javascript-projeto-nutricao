@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quebrando o problema em partes menores</title>
+  </head>
+  <body>
+    <input class="numero">
+    <input class="tabuada">
+    <span class="resultado"></span>
+    <button class="botao">Calcula</button>
+   
+
+    <script>
+
+      // var botao = document.querySelector('.botao');
+      // var numero = document.querySelector('.numero');
+      // var tabuada = document.querySelector('.tabuada');
+      // var resultado = document.querySelector('.resultado');
+
+      // botao.addEventListener('click', function(){
+      //   resultado.textContent = numero.value * tabuada.value;
+      // });
+
+      /* Ao invés de escrevermos toda vez document.querySelector podemos
+      criar uma função que funciona como atalho para ele: */
+
+      function buscaElemento(seletor) {
+        return document.querySelector(seletor);
+      }
+
+      var botao = buscaElemento('.botao');
+      var numero = buscaElemento('.numero');
+      var tabuada = buscaElemento('.tabuada');
+      var resultado = buscaElemento('.resultado');
+
+      botao.addEventListener('click', function(){
+        resultado.textContent = numero.value * tabuada.value;
+      });
+      
+    </script>
+  </body>
+</html>

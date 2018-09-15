@@ -18,7 +18,7 @@ botaoAdicionar.addEventListener("click", function(event) {
     var tabela = document.querySelector("#tabela-pacientes");
 
     tabela.appendChild(pacienteTr);
-    form.reset();
+    form.reset(); // limpar o form
   });   
 
   // Função adquirir informações do paciente do form
@@ -36,6 +36,8 @@ botaoAdicionar.addEventListener("click", function(event) {
     }
     return paciente   
   }
+
+  debugger
 
   // Função responsável por montar a tr (linha com os dados do paciente)
   function criaTr(paciente) {
