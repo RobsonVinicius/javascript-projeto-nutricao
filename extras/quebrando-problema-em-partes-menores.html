@@ -18,11 +18,7 @@
       // var botao = document.querySelector('.botao');
       // var numero = document.querySelector('.numero');
       // var tabuada = document.querySelector('.tabuada');
-      // var resultado = document.querySelector('.resultado');
-
-      // botao.addEventListener('click', function(){
-      //   resultado.textContent = numero.value * tabuada.value;
-      // });
+      // var resultado = document.querySelector('.resultado');      
 
       /* Ao invés de escrevermos toda vez document.querySelector podemos
       criar uma função que funciona como atalho para ele: */
@@ -31,13 +27,23 @@
         return document.querySelector(seletor);
       }
 
+      // Podemos isolar a lógica em uma função:
+      function aplicaTabuada(numero, tabuada) {
+        return numero * tabuada;
+      }
+
       var botao = buscaElemento('.botao');
       var numero = buscaElemento('.numero');
       var tabuada = buscaElemento('.tabuada');
       var resultado = buscaElemento('.resultado');
 
+      // botao.addEventListener('click', function(){
+      //   resultado.textContent = numero.value * tabuada.value;
+      // });
+
+      // Aplicando a função aplicaTabuada dentro do evento
       botao.addEventListener('click', function(){
-        resultado.textContent = numero.value * tabuada.value;
+        resultado.textContent = aplicaTabuada(numero.value, tabuada.value);
       });
       
     </script>
