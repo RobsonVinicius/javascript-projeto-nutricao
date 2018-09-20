@@ -48,7 +48,7 @@
 
       var convidados = [];
       
-      for(var i = 0; i < itens.lenght; i++) {
+      for(var i = 0; i < itens.length; i++) {
         var convidado = {
           nome:  itens[i].querySelector('.nome').textContent,
           idade: parseInt(itens[i].querySelector('.idade').textContent)
@@ -65,7 +65,7 @@
     function calculaTotalDasIdades(convidados) {
       var total = 0;
 
-      for(var i = 0; i < convidados.lenght; i++) {
+      for(var i = 0; i < convidados.length; i++) {
         total+=convidados[i].idade;
       }  
       return total;
