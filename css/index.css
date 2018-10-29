@@ -142,3 +142,7 @@ button[disabled=disabled], button:disabled {
 .margin-topo {
 	margin-top: 50px;
 }
+
+#mensagem-erro {
+	color: red;
+}
