@@ -3,39 +3,45 @@
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
 // Prevenir comportamento padrão
 botaoAdicionar.addEventListener("click", function(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    var form = document.querySelector("#form-adiciona");  
+  var form = document.querySelector("#form-adiciona");  
 
-    // Adquirindo informações do paciente do form
-    var paciente = adquiriPacienteDoFormulario(form);
+  // Adquirindo informações do paciente do form
+  var paciente = adquiriPacienteDoFormulario(form);
 
-    // criando a tr e a td do paciente
-    var pacienteTr = criaTr(paciente);
+  // criando a tr e a td do paciente
+  var pacienteTr = criaTr(paciente);
 
-    var erros = validaPaciente(paciente);    
+  var erros = validaPaciente(paciente);    
 
-    if(erros.length > 0) {
-      exibeMensagensDeErro(erros);      
-      return;
-    }
-
-    // Adicionando o paciente na tabela
-    var tabela = document.querySelector("#tabela-pacientes");
-
-    tabela.appendChild(pacienteTr);
-    form.reset(); // limpar o form
-  });   
-
-  function exibeMensagensDeErro(erros) {
-    var ul = document.querySelector("#mensagens-erro");
-    erros.forEach(function(erro) { // forEach 
-      var li = document.createElement("li");
-      li.textContent = erro;
-      ul.appendChild(li);
-    });
+  if(erros.length > 0) {
+    exibeMensagensDeErro(erros);      
+    return;
   }
-  
+
+  // Adicionando o paciente na tabela
+  var tabela = document.querySelector("#tabela-pacientes");
+
+  tabela.appendChild(pacienteTr);
+
+  form.reset(); // limpar o form
+
+  // limpar o erro após inserir corretamente
+  var mensagensErro = document.querySelector("#mensagens-erro");
+  mensagensErro.innerHTML = "";
+});   
+
+function exibeMensagensDeErro(erros) {
+  var ul = document.querySelector("#mensagens-erro");
+  ul.innerHTML = "";
+
+  erros.forEach(function(erro) { // forEach 
+    var li = document.createElement("li");
+    li.textContent = erro;
+    ul.appendChild(li);
+  });
+}
 
 
   // Função adquirir informações do paciente do form
@@ -77,12 +83,28 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     var erros = [];
 
+    if(paciente.nome.length == 0) {
+      erros.push("O nome não pode ser em branco");
+    }
+
     // Se o if é simples podemos declarar da maneira abaixo
     if(!validaPeso(paciente.peso)) erros.push("Peso é inválido");    
 
     if(!validaAltura(paciente.altura)) {
-      erros.push("Altura é inválida1");
+      erros.push("Altura é inválida");
     } 
+
+    if(paciente.gordura.length == 0) {
+      erros.push("A gordura não pode ser em branco");
+    }
+
+    if(paciente.peso.length == 0) {
+      erros.push("O peso não pode ser em branco");
+    }
+    
+    if(paciente.altura.length == 0) {
+      erros.push("A altura não pode ser em branco");
+    }
 
     return erros;
   }

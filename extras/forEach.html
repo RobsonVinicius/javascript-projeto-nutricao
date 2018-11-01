@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    var nomes = ["Bruce Lee", "Jackie Chan", "Jet Li", "Donnie Yen", "Sammo Hung"];
+
+    /* 
+    for(var i = 0; i < nomes.length; i++) {
+      console.log(nomes[i] + " é lutador de kung fu");
+    }
+    */
+    nomes.forEach(function(nome) {
+      alert(nome + " é lutador de kung fu");
+      console.log(nome + " é lutador de kung fu");
+    });
+
+
+    /* 
+    Todo array possui a função forEach(), em JavaScript. 
+    Passamos para ela uma função por parâmetro, e nessa 
+    função fazemos o que quisermos para cada item do 
+    array. O item do array é recebido por parâmetro na 
+    função interna:
+    */
+  </script>
+  
+</body>
+</html>
